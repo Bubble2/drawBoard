@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>画板</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="toolbar js-toolbar">
+			<div class="toolbar-box">
+				<div class="toolbar-main">
+					<div class="shape-box">
+						<ul class="shape-lst js-tool-lst">
+							<!-- <li data-tool="eraser">橡皮擦</li> -->
+							<li data-tool="eraserAll">清除全部</li>
+						</ul>
+					</div>
+				</div>
+				<div class="toolbar-title">工具</div>
+			</div>
+			<div class="toolbar-split"></div>
+			<div class="toolbar-box">
+				<div class="toolbar-main">
+					<div class="shape-box">
+						<ul class="shape-lst js-shape-lst">
+							<li data-tool="line" class="selected">直线</li>
+							<li data-tool="rect">矩形</li>
+							<li data-tool="arc">圆形</li>
+						</ul>
+					</div>
+					<div class="shape-chose">
+						<ul>
+							<li>轮廓</li>
+							<li>填充</li>
+						</ul>
+					</div>
+				</div>
+				<div class="toolbar-title">形状</div>
+			</div>
+			<div class="toolbar-split"></div>
+			<div class="toolbar-box">
+				<div class="toolbar-main toolbar-lineWidth-main">
+					<ul class="line-width-lst js-line-width-lst">
+						<li class="line-width-1 selected" data-lineWidth="1"><span></span></li>
+						<li class="line-width-2" data-lineWidth="2"><span></span></li>
+						<li class="line-width-3" data-lineWidth="3"><span></span></li>
+						<li class="line-width-4" data-lineWidth="4"><span></span></li>
+						<li class="line-width-5" data-lineWidth="5"><span></span></li>
+					</ul>
+				</div>
+				<div class="toolbar-title">线条</div>
+			</div>
+			<div class="toolbar-split"></div>
+			<div class="toolbar-box">
+				<div class="toolbar-main">
+					<ul class="color-lst js-color-lst">
+						<li class="black selected" data-color="#000"><span></span></li>
+						<li class="red" data-color="#f00"><span></span></li>
+						<li class="blue" data-color="#00f"><span></span></li>
+						<li class="green" data-color="#0f0"><span></span></li>
+						<li class="yellow" data-color="#ff0"><span></span></li>
+					</ul>
+				</div>
+				<div class="toolbar-title">颜色</div>
+			</div>
+		</div>
+		<canvas id="canvas" class="canvas" width="800" height="600"></canvas>
+		<script src="js/drawBoard.js"></script>
+		<script>
+			window.onload=function(){
+				var drawBoard=new DrawBoard();
+			}
+		</script>
+	</body>
+</html>

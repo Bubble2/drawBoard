@@ -1,0 +1,164 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background:#c9d3e2;
+}
+ul,li{
+	list-style:none;
+}
+.canvas{
+  border:1px solid #ddd;
+  background:#fff;
+  box-shadow:5px 5px 5px rgba(9,93,224,.1);
+  cursor:crosshair;
+}
+.toolbar{
+	padding:7px 0;
+	background:-webkit-linear-gradient(top,#fbfdff,#dce7f5);
+	border-top:1px solid #bac9db;
+	border-bottom:1px solid #bac9db;
+	box-shadow:inset 0 -1px 1px #e5f0fb,inset 0 -1px 1px #cedbeb;
+	overflow:hidden;
+}
+.toolbar-box{
+	float:left;
+	padding:0 6px;
+}
+.toolbar-main{
+	height:80px;
+	overflow:hidden;
+}
+.shape-box{
+	float:left;
+	width:150px;
+	height:58px;
+	border:1px solid #aabbd2;
+	background:#f3f7fc;
+	overflow-y:auto;
+}
+.shape-chose{
+	float:left;
+	margin-left:10px;
+	width:50px;
+}
+.shape-chose li{
+	color:#489de4;
+	line-height:20px;
+}
+.shape-lst{
+	overflow:hidden;
+}
+.shape-lst li{
+	float:left;
+	height:20px;
+	line-height:20px;
+	padding:0 10px;
+	color:#1a6aab;
+	cursor:default;
+}
+.shape-lst li:hover{
+	background:#fbe7c2;
+}
+.shape-lst .selected,
+.shape-lst .selected:hover,
+.shape-lst li:active{
+	background:#ffc762;
+	box-shadow:inset 0 0 15px rgba(60,40,3,.2);
+}
+.toolbar-title{
+	text-align:center;
+	color:#738399;
+	font-size:14px;
+	font-family:"Microsoft Yahei";
+}
+.toolbar-split{
+	float:left;
+	width:1px;
+	height:90px;
+	background:#a5b7d0;
+	box-shadow:0 0 0 1px #ecf1fa;
+}
+.color-lst{
+	overflow:hidden;
+}
+.color-lst li{
+	float:left;
+	margin:0 10px 4px 0;
+	padding:2px;
+	background:#fff;
+	border:1px solid #aabbd2;
+}
+.color-lst li span{
+	display:block;
+	width:22px;
+	height:22px;
+}
+.color-lst .black span{
+	background:#000;
+}
+.color-lst .red span{
+	background:#f00;
+}
+.color-lst .blue span{
+	background:#00f;
+}
+.color-lst .green span{
+	background:#0f0;
+}
+.color-lst .yellow span{
+	background:#ff0;
+}
+.color-lst .selected{
+	border-color:#ffc762;
+}
+.toolbar-lineWidth-main{
+	position:relative;
+	width:100px;
+	overflow:hidden;
+}
+.line-width-lst{
+
+	width:100px;
+}
+
+.toolbar-lineWidth-main:hover{
+	overflow:visible;
+}
+
+.toolbar-lineWidth-main:hover .line-width-lst{
+	position:absolute;
+	top:0;
+	left:0;
+	background:#fff;
+}
+.line-width-lst li{
+	width:100px;
+	height:20px;
+	line-height:20px;
+}
+.line-width-lst li span{
+	display:inline-block;
+	vertical-align:middle;
+	width:100px;
+	background:#000;
+}
+.line-width-1 span{
+	height:1px;
+}
+.line-width-2 span{
+	height:2px;
+}
+.line-width-3 span{
+	height:3px;
+}
+.line-width-4 span{
+	height:4px;
+}
+.line-width-5 span{
+	height:5px;
+}
+.line-width-lst .selected{
+	background:#ffc762;
+}
