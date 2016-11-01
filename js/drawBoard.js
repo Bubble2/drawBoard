@@ -9,6 +9,10 @@ function DrawBoard(){
 DrawBoard.prototype={
 	constructor: DrawBoard,
 
+	/**
+	 * 初始化各种方法
+	 * 
+	**/
 	init:function(){
 
 	  	this.scroll();
@@ -26,6 +30,10 @@ DrawBoard.prototype={
   		this.toolFn();
 	},
 
+	/**
+	 * 滚动条滚动后重新计算鼠标绘制位置
+	 * 
+	**/
 	scroll:function(){
   		var _this=this;
   		document.onscroll=function(){
@@ -36,7 +44,10 @@ DrawBoard.prototype={
   		}
   	},
 
-
+  	/**
+	 * 工具选择事件
+	 * 
+	**/
   	toolFn:function(){
   		var _this=this;
   		var aTool=document.querySelector(".js-tool-lst").children;
@@ -47,6 +58,10 @@ DrawBoard.prototype={
 		}
   	},
 
+  	/**
+	 * 选择工具判断
+	 * @param sTool
+	**/
 	toolChoose:function(sTool){
 		if(sTool=="eraserAll"){
 			this.clearRectAll();
@@ -56,7 +71,10 @@ DrawBoard.prototype={
 		}
 	},
 
-
+	/**
+	 * 形状选择事件
+	 * 
+	**/
 	shapeFn:function(){
 		var _this=this;
 		var aShape=document.querySelector(".js-shape-lst").children;
@@ -71,6 +89,10 @@ DrawBoard.prototype={
 		}
 	},
 
+	/**
+	 * 形状选择判断
+	 * @param sShape
+	**/
 	shapeChoose:function(sShape){
 		this.toolSwitch("crosshair",sShape);
 		if(sShape=="rect"){
@@ -82,6 +104,10 @@ DrawBoard.prototype={
 		}
 	},
 
+	/**
+	 * 颜色选择事件
+	 * 
+	**/
 	colorFn:function(){
 		var _this=this;
 		var aColor=document.querySelector(".js-color-lst").children;
@@ -96,11 +122,19 @@ DrawBoard.prototype={
 		}
 	},
 
+	/**
+	 * 颜色选择判断
+	 * @param sColor
+	**/
 	colorChoose:function(sColor){
 		this.sColor=sColor?sColor:"#000";
 		this.oCxt.strokeStyle=this.sColor;
 	},
 
+	/**
+	 * 线条选择事件
+	 * 
+	**/
 	lineWidthFn:function(){
 		var _this=this;
 		var aLineWidth=document.querySelector(".js-line-width-lst").children;
@@ -115,11 +149,19 @@ DrawBoard.prototype={
 		}
 	},
 
+	/**
+	 * 线条选择判断
+	 * @param iLineWidth
+	**/
 	lineWidthChoose:function(iLineWidth){
 		this.iLineWidth=iLineWidth?iLineWidth:1;
 		this.oCxt.lineWidth=this.iLineWidth;
 	},
 
+	/**
+	 * 创建虚拟canvas--绘制矩形和圆形时，鼠标按下创建，鼠标抬起移除
+	 * 
+	**/
 	virtualCanvasCreate:function(){
 		var vCs=this.oCanvas.cloneNode(true);
 		vCs.id="virtualCanvas";
@@ -136,10 +178,18 @@ DrawBoard.prototype={
 		}
 	},
 
+	/**
+	 * 移除虚拟canvas
+	 * 
+	**/
 	virtualCanvasRemove:function(vCs){
 		document.querySelector("body").removeChild(vCs);
 	},
 
+	/**
+	 * 绘制线条
+	 * 
+	**/
   	drawLine:function(){
   		var _this=this;
   		this.oCanvas.onmousedown=function(event){
@@ -169,6 +219,10 @@ DrawBoard.prototype={
 	    }
   	},
 
+  	/**
+	 * 绘制矩形
+	 * 
+	**/
   	drawRect:function(){
   		var _this=this;
   		this.oCanvas.onmousedown=function(event){
@@ -208,6 +262,10 @@ DrawBoard.prototype={
   		}
   	},
 
+  	/**
+	 * 绘制圆形
+	 * 
+	**/
   	drawArc:function(){
   		var _this=this;
   		this.oCanvas.onmousedown=function(event){
@@ -253,11 +311,18 @@ DrawBoard.prototype={
   		}
   	},
 
-
+  	/**
+	 * 工具切换后，鼠标样式的切换
+	 * 
+	**/
   	toolSwitch:function(sCursorStyle,sTool){
   		this.oCanvas.style="cursor:"+sCursorStyle;
   	},
 
+  	/**
+	 * 清楚画布
+	 * 
+	**/
   	clearRectAll:function(){
   		this.oCxt.clearRect(0,0,this.oCanvas.width,this.oCanvas.height);
   	}
